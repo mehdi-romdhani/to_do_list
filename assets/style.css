@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  border-bottom: 1px solid black;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  /* border: 1px solid red; */
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  /* border: 1px solid saddlebrown; */
+}
+
+header nav ul li {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid blue; */
+  margin-left: 5%;
+}
+
+/*****************MAIN-CONTAINER**************/
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  border: 1px solid black;
+  margin-top: 5%;
+}
+
+.main-container .container-sub-co {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+.main-container .container-sub-co button {
+  margin-left: 5%;
+  padding: 1%;
+}
+
+.main-container .container-sub-co button:hover {
+  cursor: pointer;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.container-form form {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+}
+
+/****************TODOLIST********************/
+.container-task{
+    display: flex;
+    flex-direction:row;
+    width: 100vw;
+    border: 1px solid red;
+    margin-top: 3%;
+}
+
+.container-create-task{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    border: 1px solid black;
+}
+
+.container-task-done{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 20vh;
+    border: 1px solid salmon;
+    margin-top: 5%;
+}
