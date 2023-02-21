@@ -1,6 +1,21 @@
 <?php
 session_start();
-var_dump($_SESSION)
+
+
+require_once('./include/connect.php');
+require_once('./src/Todo.php');
+
+
+if (isset($_POST['task'])) {
+
+    echo Todo::addTask($_POST['task']);  
+    die();
+}
+
+if(isset($_GET['getTask']) && $_GET['getTask'] = 'all'){
+    echo Todo::displayTask();
+    die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +28,7 @@ var_dump($_SESSION)
     <!-- Link CSS -->
     <link rel="stylesheet" href="./assets/style.css">
     <!-- Link Js -->
-    <link rel="stylesheet" href="./js/todolist.js">
+    <script defer src="./assets/js/todolist.js"></script>
     <!-- Titre Document -->
     <title>To_do_list</title>
 </head>
@@ -21,24 +36,32 @@ var_dump($_SESSION)
 <body>
 
     <?php require_once('./include/header.php'); ?>
-    <h1>Bienvenue sur ta TO DO LIST : <?php echo ucwords($_SESSION['login'])?></h1>
+    <h1>Bienvenue sur ta TO DO LIST : <?php echo ucwords($_SESSION['login']) ?></h1>
 
     <div class="container-task">
         <div class="container-create-task">
             <h2>Crée une tache</h2>
-            <form action="#" method="POST" id="task-form">
-                
-                <input type="text">
-                <button type="submit">Ajoutez</button>
+            <form method="POST" id="task-form">
+
+                <input type="text" name="task">
+                <button type="submit" id="task-btn">Ajoutez</button>
+                <p id="task_done"></p>
             </form>
         </div>
     </div>
 
     <div class="container-task-done">
         <h2>To_do_list</h2>
+        <p id="json_fetch"></p>
     </div>
 
-    
+    <div class="container-task-finish">
+        <h2>Done_List</h2>
+        <ul id="task_li_finish"></ul>
+        
+    </div>
+
+
 </body>
 
 </html>

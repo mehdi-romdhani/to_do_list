@@ -5,6 +5,7 @@ require_once('./src/User.php');
 if(isset($_POST['login_co'])&& isset($_POST['password_co'])){
 
    echo User::connect($_POST['login_co'],$_POST['password_co']);
+   
    die();
 }
 ?>
