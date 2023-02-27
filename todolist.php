@@ -6,16 +6,28 @@ require_once('./include/connect.php');
 require_once('./src/Todo.php');
 
 
+
 if (isset($_POST['task'])) {
 
-    echo Todo::addTask($_POST['task']);  
+    echo Todo::addTask($_POST['task']);
     die();
 }
 
-if(isset($_GET['getTask']) && $_GET['getTask'] = 'all'){
+if (isset($_GET['getTask']) && $_GET['getTask'] == 'all') {
+
+
     echo Todo::displayTask();
+
     die();
 }
+
+if (isset($_GET['doneTask']) && $_GET['doneTask'] == "Id") {
+
+    echo Todo::updateTask();
+    die();
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -50,15 +62,19 @@ if(isset($_GET['getTask']) && $_GET['getTask'] = 'all'){
         </div>
     </div>
 
-    <div class="container-task-done">
+    <div class="container-task-booked">
         <h2>To_do_list</h2>
-        <p id="json_fetch"></p>
+        <ul id="ul_task_booked">
+
+        </ul>
     </div>
 
     <div class="container-task-finish">
         <h2>Done_List</h2>
-        <ul id="task_li_finish"></ul>
-        
+        <ul id="ul_task_finish">
+
+        </ul>
+
     </div>
 
 
